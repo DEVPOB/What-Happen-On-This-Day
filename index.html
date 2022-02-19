@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//db.onlinewebfonts.com/c/2f30b2f8799dc0b961ed83f5ac3b0d68?family=0Arame" rel="stylesheet"
+        type="text/css" />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>I'm BOB</title>
 </head>
+
 <body>
-    <p>test</p>    
+    <p id="test"></p>
+
+    <script>
+        function addZero(i) {
+            if (i < 10) { i = "0" + i }
+            return i;
+        }
+
+        const d = new Date();
+        let h = addZero(d.getHours());
+        let m = addZero(d.getMinutes());
+        let s = addZero(d.getSeconds());
+        let time = h + ":" + m + ":" + s;
+        document.getElementById("test").innerHTML = time;
+    </script>
+
 </body>
+
 </html>
