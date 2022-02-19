@@ -12,22 +12,19 @@
 </head>
 
 <body>
-    <p id="test"></p>
+    <div class="container">
+        <span id="hour">00</span>
+        <span>:</span>
+        
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
 
-    <script>
-        function addZero(i) {
-            if (i < 10) { i = "0" + i }
-            return i;
-        }
-
-        const d = new Date();
-        let h = addZero(d.getHours());
-        let m = addZero(d.getMinutes());
-        let s = addZero(d.getSeconds());
-        let time = h + ":" + m + ":" + s;
-        document.getElementById("test").innerHTML = time;
-    </script>
-
+    </div>
+    
+   
+    
+    <script src="main.js"></script>
 </body>
 
 </html>
