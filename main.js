@@ -1,5 +1,5 @@
 
-let myRequest = new Request("Data.json")
+let myRequest = new Request("/JSON/Data.json")
 function addZero(i) {
     if (i < 10) { i = "0" + i }
     return i;
@@ -36,7 +36,6 @@ function CheckDay(){
         return response.json();
     })
     .then(function(data){
-        console.log(data[1].Date_Json)
         if(D == data[1].Date_Json  && M == data[1].Month_Json){
             document.getElementById('videobg').src=data[1].Event_Video_Json;
             document.getElementById('Today').innerHTML = data[1].Event_Content_Json;
