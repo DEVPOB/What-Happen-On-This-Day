@@ -1,4 +1,5 @@
-const myRequest = require('axios');
+
+let myRequest = new Request("/Json/Data.json")
 function addZero(i) {
     if (i < 10) { i = "0" + i }
     return i;
@@ -30,18 +31,18 @@ function CheckDay(){
     const d = new Date();
     var D = d.getDate();
     var M = d.getMonth()+1;
-    myRequest.get('http://localhost:3000/DB')
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log(data[1].Date_Json)
-            if(D == data[1].Date_Json  && M == data[1].Month_Json){
-                document.getElementById('videobg').src=data[1].Event_Video_Json;
-                document.getElementById('Today').innerHTML = data[1].Event_Content_Json;
-                document.getElementById('Today').href=data[1].Event_Tolink_Json;
-            }
-        })
+    fetch(myRequest)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data[1].Date_Json)
+        if(D == data[1].Date_Json  && M == data[1].Month_Json){
+            document.getElementById('videobg').src=data[1].Event_Video_Json;
+            document.getElementById('Today').innerHTML = data[1].Event_Content_Json;
+            document.getElementById('Today').href=data[1].Event_Tolink_Json;
+        }
+    })
         
     
     
