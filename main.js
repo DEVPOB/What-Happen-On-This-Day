@@ -1,4 +1,4 @@
-let myRequest = new Request("/Json/Data.json")
+const myRequest = require('axios');
 function addZero(i) {
     if (i < 10) { i = "0" + i }
     return i;
@@ -30,7 +30,7 @@ function CheckDay(){
     const d = new Date();
     var D = d.getDate();
     var M = d.getMonth()+1;
-    fetch(myRequest)
+    myRequest.get('http://localhost:3000/DB')
         .then(function(response){
             return response.json();
         })
