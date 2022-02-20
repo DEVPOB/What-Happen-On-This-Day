@@ -1,34 +1,52 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300&display=swap');
 body{
+    font-family: 'Hind Vadodara', sans-serif;
     background-color: rgb(27, 27, 27);
 }
-.container{
-    font-family: 'Roboto', sans-serif;
+.TimeNotUTC{
     color: rgb(158, 252, 220);
     position: absolute;
-    transform: translate(-50%,-50%);
-    top: 55%;
+    top: 50%;
     left: 50%;
+    font-weight: bold;
     font-size: clamp(1rem,5.5vw,7.3rem);
+    transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
 }
 .Date{
-    font-family: 'Roboto', sans-serif;
     color: rgb(158, 252, 220) ;
     position: absolute;
-    transform: translate(-50%,-50%);
     top: 40%;
     left: 50%;
+    font-weight: bold;
+    transform: translate(-50%,-50%);
     font-size: clamp(1rem,5.5vw,7.3rem);
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
 }
+.ThisDay a{
+    color: rgb(158, 252, 220) ;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    text-transform: uppercase;
 
+    font-size: clamp(0.5rem,3vw,4rem);
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.nav-bar{
+    float: right;
+}
 #videobg{
     opacity: 30%;
     left: 0;

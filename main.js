@@ -1,3 +1,4 @@
+let myRequest = new Request("/Json/Data.json")
 function addZero(i) {
     if (i < 10) { i = "0" + i }
     return i;
@@ -29,26 +30,42 @@ function CheckDay(){
     const d = new Date();
     var D = d.getDate();
     var M = d.getMonth()+1;
-    if(D == "19" && M == "2"){
-        document.getElementById('videobg').src='/Video/Iwo jima.mp4'
-    }
-    if(D == "20" && M == "2"){
-        document.getElementById('videobg').src='/Video/luner moon.mp4'
-    }
-    if(D == "21" && M == "2"){
-        document.getElementById('videobg').src='/Video/CommunistArrive.mp4'
-    }
-    if(D == "22" && M == "2"){
-        document.getElementById('videobg').src='/Video/Clone.mp4'
-    }
-    if(D == "23" && M == "2"){
-        document.getElementById('videobg').src='/Video/sanambindon.mp4'
-    }
-    if(D == "24" && M == "2"){
-        // document.getElementById('videobg').src='/video/'
-    }
+    fetch(myRequest)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data[1].Date_Json)
+            if(D == data[1].Date_Json  && M == data[1].Month_Json){
+                document.getElementById('videobg').src=data[1].Event_Video_Json;
+                document.getElementById('Today').innerHTML = data[1].Event_Content_Json;
+                document.getElementById('Today').href=data[1].Event_Tolink_Json;
+            }
+        })
+        
+    
     
 }
 CheckDay();
 Date_clock();
 
+
+// if(D == "19" && M == "2"){
+    //     document.getElementById('videobg').src='/Video/Iwo jima.mp4';
+    //     document.getElementById('Today').innerHTML = 'Raising the Flag on Iwo Jima';
+    //     document.getElementById('Today').href='https://en.wikipedia.org/wiki/Raising_the_Flag_on_Iwo_Jima';
+    // }
+// if(D == "21" && M == "2"){
+//     document.getElementById('videobg').src='/Video/CommunistArrive.mp4'
+//     document.getElementById('Today').innerHTML = 'Communist Declaration of Intent';
+//     document.getElementById('Today').href='https://en.wikipedia.org/wiki/Raising_the_Flag_on_Iwo_Jima';
+// }
+// if(D == "22" && M == "2"){
+//     document.getElementById('videobg').src='/Video/Clone.mp4'
+// }
+// if(D == "23" && M == "2"){
+//     document.getElementById('videobg').src='/Video/Iwo jima.mp4'
+// }
+// if(D == "24" && M == "2"){
+     // document.getElementById('videobg').src='/video/'
+// }
