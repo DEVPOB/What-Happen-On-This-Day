@@ -1,5 +1,5 @@
 
-let myRequest = new Request("/Json/Data.json")
+let myRequest = new Request("Data.json")
 function addZero(i) {
     if (i < 10) { i = "0" + i }
     return i;
