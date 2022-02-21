@@ -4,10 +4,10 @@ function addZero(i) {
     if (i < 10) { i = "0" + i }
     return i;
 }
-function Date_clock(){
+function Date_clock() {
     var d = new Date();
-    var D = d.getDate();
-    var M = d.getMonth()+1;
+    let D = d.getDate();
+    let M = d.getMonth() + 1;
     let h = addZero(d.getHours());
     let m = addZero(d.getMinutes());
     let s = addZero(d.getSeconds());
@@ -24,29 +24,37 @@ function Date_clock(){
     document.getElementById('min').innerHTML = m;
     document.getElementById('sec').innerHTML = s;
     document.getElementById('pm_am').innerHTML = am_or_pm
-    setInterval(Date_clock,10);
+    setInterval(Date_clock, 10);
 
 }
-function CheckDay(){
-    const d = new Date();
-    var D = d.getDate();
-    var M = d.getMonth()+1;
+function ChangeContent() {
+    //calculate the day of the year
+    let d = new Date();
+    let start = new Date(d.getFullYear(), 0, 0);
+    let diff = d - start;
+    let oneDay = 1000 * 60 * 60 * 24;
+    let day = Math.floor(diff / oneDay);
+
     fetch(myRequest)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        if(D == data[1].Date_Json  && M == data[1].Month_Json){
-            document.getElementById('videobg').src=data[1].Event_Video_Json;
-            document.getElementById('Today').innerHTML = data[1].Event_Content_Json;
-            document.getElementById('Today').href=data[1].Event_Tolink_Json;
-        }
-    })
-        
-    
-    
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data.Date[day - 1].Date_Json)
+
+
+
+
+            document.getElementById('videobg').src = data.Date[day - 1].Event_Video_Json;
+            document.getElementById('Today').innerHTML = data.Date[day - 1].Event_Content_Json;
+            document.getElementById('Today').href = data.Date[day - 1].Event_Tolink_Json;
+
+        })
+
+
+
 }
-CheckDay();
+ChangeContent();
 Date_clock();
 
 
