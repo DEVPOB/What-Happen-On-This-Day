@@ -36,15 +36,17 @@ function ChangeContent() {
     let day = Math.floor(diff / oneDay);
 
     fetch(myRequest)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data.Date[day - 1].Date_Json)
-
-
-
-
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data.Date[day - 1].Date_Json)
+        
+        
+        
+            let Y = d.getFullYear() - data.Date[day - 1].Year_Json;
+            document.getElementById('year-has-passed').innerHTML = "-" + Y;
+            document.getElementById('year').innerHTML = data.Date[day-1].Year_Json;
             document.getElementById('videobg').src = data.Date[day - 1].Event_Video_Json;
             document.getElementById('Today').innerHTML = data.Date[day - 1].Event_Content_Json;
             document.getElementById('Today').href = data.Date[day - 1].Event_Tolink_Json;

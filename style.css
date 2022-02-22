@@ -1,5 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     font-family: 'Hind Vadodara', sans-serif;
     background-color: rgb(27, 27, 27);
@@ -22,6 +26,7 @@ body{
     vertical-align: 110%;
 }
 .Date{
+    
     color: rgb(158, 252, 220) ;
     position: absolute;
     top: 40%;
@@ -34,13 +39,18 @@ body{
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
 }
+.Date #year-has-passed{
+    font-size: clamp(0.5rem,1.5vw,1.5rem);
+    vertical-align: 110%;
+    color: rgb(247, 85, 85);
+}
+
 .ThisDay a{
     color: rgb(158, 252, 220) ;
     position: absolute;
     left: 50%;
     top: 60%;
     text-transform: uppercase;
-
     font-size: clamp(1rem,2vw,5rem);
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);

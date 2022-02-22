@@ -367,16 +367,18 @@
         {
             "Date_Json": "22",
             "Month_Json": "2",
-            "Event_Video_Json": "/Video/22_2.mp4.mp4",
+            "Year_Json":"1971",
+            "Event_Video_Json": "/Video/22_2.mp4",
             "Event_Content_Json": "Mr. Komol Keemthong dies",
             "Event_Tolink_Json": "https://mgronline.com/qol/detail/9500000020096"
         },
         {
             "Date_Json": "23",
             "Month_Json": "2",
-            "Event_Video_Json": "/Video/luner moon.mp4",
-            "Event_Content_Json": "Total lunar eclipse in thailand",
-            "Event_Tolink_Json": "https://en.wikipedia.org/wiki/Lunar_eclipse"
+            "Year_Json": "",
+            "Event_Video_Json": "/Video/23_2.mp4",
+            "Event_Content_Json": "Don Mueang Airport was completed.",
+            "Event_Tolink_Json": "https://zhort.link/AmR"
         },
         {
             "Date_Json": "24",
