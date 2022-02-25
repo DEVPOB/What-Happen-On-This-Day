@@ -1,4 +1,3 @@
-
 let myRequest = new Request("/JSON/Data.json")
 function addZero(i) {
     if (i < 10) {
@@ -30,7 +29,7 @@ function Date_clock() {
 
 }
 function ChangeContent() {
-    //calculate the day of the year
+    // calculate the day of the year
     let d = new Date();
     let start = new Date(d.getFullYear(), 0, 0);
     let diff = d - start;
@@ -50,9 +49,6 @@ function ChangeContent() {
         document.getElementById('Today').innerHTML = data.Date[day - 1].Event_Content_Json;
         document.getElementById('Today').href = data.Date[day - 1].Event_Tolink_Json;
     })
-
-
-
 }
 ChangeContent();
 Date_clock();

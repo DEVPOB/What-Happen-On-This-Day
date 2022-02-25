@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300&display=swap');
 :root{
     --text-color:rgb(158, 252, 220);
+    --star-color: rgb(223, 248, 112);
 }
 *{
     margin: 0;
@@ -52,6 +53,21 @@ body{
     
 }
 
+.github a{
+    color: var(--text-color);
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    font-weight:bold;
+    text-decoration: none;
+    color: var(--star-color);
+    text-transform: uppercase;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
 
 
 
