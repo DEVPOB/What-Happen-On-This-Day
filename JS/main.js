@@ -41,13 +41,22 @@ function ChangeContent() {
         return response.json();
     })
     .then(function (data) {
-        
-        let Y = d.getFullYear() - data.Date[day - 1].Year_Json;
-        document.getElementById('year-has-passed').innerHTML = "-" + Y;
-        document.getElementById('year').innerHTML = data.Date[day-1].Year_Json;
-        document.getElementById('videobg').src = data.Date[day - 1].Event_Video_Json;
-        document.getElementById('Today').innerHTML = data.Date[day - 1].Event_Content_Json;
-        document.getElementById('Today').href = data.Date[day - 1].Event_Tolink_Json;
+        try {
+            let Y = d.getFullYear() - data.Date[day - 1].Year_Json;
+            document.getElementById('year-has-passed').innerHTML = "-" + Y;
+            document.getElementById('year').innerHTML = data.Date[day-1].Year_Json;
+            document.getElementById('videobg').src = data.Date[day - 1].Event_Video_Json;
+            document.getElementById('Today').innerHTML = data.Date[day - 1].Event_Content_Json;
+            document.getElementById('Today').href = data.Date[day - 1].Event_Tolink_Json;
+            
+        } catch {
+            console.log("No Source situation");
+            document.getElementById('year-has-passed').innerHTML = "1xxx";
+            document.getElementById('year').innerHTML = d.getFullYear();
+            document.getElementById('videobg').src = "/Video/No Source/Ricardo Milos - Basshunter DotA.mp4";
+            document.getElementById('Today').innerHTML = "No Source";
+            document.getElementById('Today').href = "https://github.com/DEVPOB/What-Happen-On-This-Day";
+        }
     })
 }
 ChangeContent();
